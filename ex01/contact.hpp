@@ -2,6 +2,7 @@
 #define CONTACT_HPP_
 
 #include <iostream>
+#include <iomanip> 
 #include <string>
 
 class Contact {
@@ -23,6 +24,8 @@ public:
     std::string postalAddress, std::string emailAddress, std::string phoneNumber, std::string birthDate, std::string favouriteMeal,
     std::string underwearColour, std::string darkestSecret);
     void getDetails();
+    void searchDisplay();
+    void contactDisplay();
     void getName();
 };
 

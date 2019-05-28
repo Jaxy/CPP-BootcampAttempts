@@ -6,7 +6,21 @@ void printMenu() {
     std::cout << "3. \tEXIT" << std::endl; 
 }
 
-void processContact(Contact contact) {
+void printContacts(Contact *contact, int count) {
+    std::cout << std::right << std::setw(10) << "Index" << "|" << std::flush;
+    std::cout << std::right << std::setw(10) << "First Name" << "|" << std::flush;
+    std::cout << std::right << std::setw(10) << "Last Name" << "|" << std::flush;
+    std::cout << std::right << std::setw(10) << "Nickname" << "|" << std::endl;
+    int index = 0;
+    while (count) {
+        std::cout << std::right << std::setw(10) << index << "|" << std::flush;
+        contact[index].searchDisplay();
+        count--;
+        index++;
+    }
+}
+
+void processContact(Contact *contact, int &count) {
     std::cout << "Enter First Name: " << std::endl;
     std::string firstName;
     getline(std::cin, firstName);
@@ -40,30 +54,55 @@ void processContact(Contact contact) {
     std::cout << "Enter Darkest Secret: " << std::endl;
     std::string darkestSecret;
     getline(std::cin, darkestSecret);
-    contact.addContact(firstName, lastName, nickname, login, postalAddress, emailAddress,
+    contact->addContact(firstName, lastName, nickname, login, postalAddress, emailAddress,
     phoneNumber, birthDate, favouriteMeal, underwearColour, darkestSecret);
-    contact.getName();
+    count++;
+}
+
+void processSearch(Contact *contact, int count) {
+    if (count > 0) {
+        std::cout << "Enter Index for desired contact: " << std::endl;
+        int index;
+        std::cin >> index;
+        std::cin.clear();
+        std::cin.ignore();
+        if (index >= 0 && index < count) {
+            std::cout << "Your choice was " << index << std::endl;
+            contact[index].contactDisplay();
+        } else {
+            std::cout << "Invalid Index value." << std::endl;
+        }
+    } else {
+        std::cout << "Phonebook is empty." << std::endl;
+    }
 }
 
 void processChoice() {
+    Contact contact[8];
+    int count = 0;
     /* CHAR VERSION */
     std::string choice = "";
     do {
+        printMenu();
         getline(std::cin, choice);
         switch(choice[0]) {
             case '1' :
-                std::cout << "First!" << std::endl; 
+                std::cout << "\x1b[32mAdding new Contact\x1b[0m" << std::endl;
+                processContact(&contact[count], count);
+                std::cout << "count : " << count << std::endl;
                 break;
             case '2' :
-                std::cout << "Second!" << std::endl;
+                std::cout << "\x1b[32mSearching for Contact\x1b[0m" << std::endl;
+                printContacts(contact, count);
+                processSearch(contact, count);
                 break;
             case '3' :
-                std::cout << "Third" << std::endl;
+                std::cout << "\x1b[31mExiting Program\x1b[0m" << std::endl;
                 break;
             default :
-                std::cout << "Invalid selection" << std::endl;
+                std::cout << "Invalid Selection" << std::endl;
+                break;
         }
-        std::cout << "Your selection is: " << choice << std::endl;
     } while (choice[0] != '3');
 
     /* INT VERSION */
@@ -82,12 +121,6 @@ void processChoice() {
 }
 
 int main() {
-    Contact contact[8];
-    int index = 0;
-    // printMenu();
-    // processChoice();
-    // contact[index].addContact("hello");
-    processContact(contact[index]);
-    contact[index].getName();
+    processChoice();
     return 0;
 }

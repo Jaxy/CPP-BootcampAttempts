@@ -49,3 +49,35 @@ void Contact::getDetails() {
     std::cout << "Underwear Colour: \t" << this->underwearColour << std::endl;
     std::cout << "Darkest Secret: \t" << this->darkestSecret << std::endl;
 }
+
+void limitString(std::string str) {
+    std::string toPrint = "";
+    if (str.size() > 10) {
+        toPrint = str.substr(0, 9);
+        toPrint += '.';
+    } else {
+        toPrint = str;
+    }
+    std::cout << std::right << std::setw(10) << toPrint << "|" << std::flush;
+}
+
+void Contact::searchDisplay() {
+    limitString(this->firstName);
+    limitString(this->lastName);
+    limitString(this->nickname);
+    std::cout << std::endl;
+}
+
+void Contact::contactDisplay() {
+    std::cout << "First Name: \t\t" << this->firstName << std::endl;
+    std::cout << "Last Name: \t\t" << this->lastName << std::endl;
+    std::cout << "Nickname: \t\t" << this->nickname << std::endl;
+    std::cout << "Login: \t\t\t" << this->login << std::endl;
+    std::cout << "Postal Address: \t" << this->postalAddress << std::endl;
+    std::cout << "Email Address: \t\t" << this->emailAddress << std::endl;
+    std::cout << "Phone Number: \t\t" << this->phoneNumber << std::endl;
+    std::cout << "Birth Date: \t\t" << this->birthDate << std::endl;
+    std::cout << "Favourite Meal: \t" << this->favouriteMeal << std::endl;
+    std::cout << "Underwear Colour: \t" << this->underwearColour << std::endl;
+    std::cout << "Darkest Secret: \t" << this->darkestSecret << std::endl;
+}
