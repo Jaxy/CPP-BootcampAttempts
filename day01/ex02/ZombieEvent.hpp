@@ -9,6 +9,7 @@ private:
 public:
     ZombieEvent();
     void setZombieType();
+    void randomChump();
     Zombie* newZombie(std::string name);
 };
 
