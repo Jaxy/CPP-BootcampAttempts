@@ -8,13 +8,17 @@ Fixed::Fixed() {
 
 Fixed::Fixed(int const nb) {
     std::cout << "Int constructor called" << std::endl;
-    _nb = nb;
+    // shifting bits for nb 8 to the left
+    setRawBits(nb << this->_nbBits);
     return;
 }
 
 Fixed::Fixed(float const nb) {
     std::cout << "Float constructor called" << std::endl;
-    _nb = nb;
+    // shifting bits 8 to the left, 1 becomes 1000 0000 (binary) which is 256 (decimal)
+    // because it is a float, we need to round off to nearest whole number
+    setRawBits(ceil(nb * (1 << this->_nbBits)));
+    // std::cout << "\x1b[32mHello : " << getRawBits() << "\x1b[0m" << std::endl;
     return;
 }
 
@@ -36,11 +40,8 @@ Fixed & Fixed::operator=(Fixed const & rhs) {
 }
 
 std::ostream & operator<<(std::ostream & o, Fixed const & rhs) {
-    // std::cout << "Assignation operator called" << std::endl;
-    // this->_nb = rhs.getRawBits();
     o << rhs.toFloat();
     return o;
-    // return *this;
 }
 
 int Fixed::getRawBits(void) const {
@@ -54,9 +55,11 @@ void Fixed::setRawBits(int const raw) {
 }
 
 float Fixed::toFloat() const {
-    return (float)this->_nb;
+    // shifting bits 8 to the left, 1 becomes 1000 0000 (binary) which is 256 (decimal)
+    return ((float)getRawBits() / (1 << this->_nbBits));
 }
 
 int Fixed::toInt() const {
-    return (int)this->_nb;
+    // shifting bits for nb 8 to the right to get Int value
+    return (getRawBits() >> this->_nbBits);
 }
