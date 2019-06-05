@@ -7,7 +7,7 @@ OBJS     := $(SRCS:.cpp=.o)
 # HEADERS	 := Fixed.hpp
 
 # Define all the compiling flags.
-CXX      := clang++ -std=c++98
+CXX      := g++ -std=c++98
 CXXFLAGS := -Wall -Werror -Wextra
 
 # Compile and create everything.
