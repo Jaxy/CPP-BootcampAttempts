@@ -1,0 +1,19 @@
+"What do you think of using a namespace instead of a class to represent fixed point
+values ? I mean, with a scoped typedef on int, we could write scoped functions and save
+the cost of instanciations, but at the same time, we’d loose some handy syntax. What’s
+your point of view ?"
+
+Classes can define types, whereas namespaces simply declare a scope whereby other
+things (such as types, functions etc) can exist. Namespaces cannot create instances
+(objects) whereas clases can, thus namespaces are seen more as a means to group
+identifiers unlike classes which have their own object instance they reference.
+
+Essentially namespaces can have a lot of types, attributes, functions etc that could be logically
+relevant to what would be making use of the namespace within the scope, whereas a class
+only contains types, attributs, functions etc that are essential to it (only related to that class).
+
+Thus I'd prefer using a class to represent a fixed point as everthing necessary for a fixed point
+manipulation can all be accessed and controlled by the class, preventing external alternations that
+could destroy the logic and implementation of a fixed point. Classes of same name cannot be overwritten
+which also helps protect your code from redundancy or addition of content that may alter the behaviour
+of the fixed point.
