@@ -6,7 +6,7 @@ SRCS     := main.cpp FragTrap.cpp
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
-CXX      := g++ -std=c++98
+CXX      := clang++ -std=c++98
 CXXFLAGS := -Wall -Werror -Wextra
 
 # Compile and create everything.

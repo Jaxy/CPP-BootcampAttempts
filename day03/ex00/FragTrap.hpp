@@ -9,7 +9,7 @@ class FragTrap {
     FragTrap(void);
     FragTrap(std::string name);
     FragTrap(FragTrap &obj);
-    virtual ~FragTrap(void);
+    ~FragTrap(void);
     FragTrap &operator=(FragTrap const &r);
 
     void	rangedAttack(std::string const &target);
@@ -20,7 +20,12 @@ class FragTrap {
     void	rename(std::string input);
     void	displayStats(void);
 
-    // void	vaulthunter_dot_exe(std:: string const &target);
+    void    randAtk1(std::string const &target);
+    void    randAtk2(std::string const &target);
+    void    randAtk3(std::string const &target);
+    void    randAtk4(std::string const &target);
+    void    randAtk5(std::string const &target);
+    void	vaulthunter_dot_exe(std:: string const &target);
 
 	private:
     int					_hp;

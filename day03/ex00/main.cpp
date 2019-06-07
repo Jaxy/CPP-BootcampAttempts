@@ -1,30 +1,45 @@
 #include "FragTrap.hpp"
 
-int	main()
-{
-	FragTrap trapone;
+int	main() {
 
-	trapone.meleeAttack("Mielies");
-	trapone.rangedAttack("Rangers");
-	trapone.takeDamage(50);
-	trapone.beRepaired(20);
-	trapone.beRepaired(50);
-	trapone.takeDamage(120);
-	trapone.beRepaired(500);
-	trapone.rename("NEWBIE-01");
-	trapone.beRepaired(20);
+	FragTrap fragTrap1;
 
-	FragTrap traptwo(trapone);
-	traptwo.rename("TQO-TWO");
-	traptwo.meleeAttack("NEWBIE-01");
-	trapone.takeDamage(30);
+	fragTrap1.meleeAttack("Mielies");
+	fragTrap1.rangedAttack("Rangers");
+	fragTrap1.takeDamage(50);
+	fragTrap1.beRepaired(20);
+	fragTrap1.beRepaired(50);
+	fragTrap1.takeDamage(120);
+	fragTrap1.beRepaired(500);
+	fragTrap1.rename("NEWBIE-01");
+	fragTrap1.beRepaired(20);
 
-	FragTrap trapthree("Thr33");
+	FragTrap fragTrap2(fragTrap1);
+	fragTrap2.rename("TQO-TWO");
+	fragTrap2.meleeAttack("NEWBIE-01");
+	fragTrap1.takeDamage(30);
+
+	FragTrap fragTrap3("Thr33");
 	std::cout << std::endl;
 
-	trapone.displayStats();
-	traptwo.displayStats();
-	trapthree.displayStats();
+	std::cout << "===== VAULT HUNTER EXE =====" << std::endl;
+	fragTrap1.vaulthunter_dot_exe("Thr33");
+	fragTrap3.takeDamage(20);
+	fragTrap2.vaulthunter_dot_exe("Thr33");
+	fragTrap3.takeDamage(20);
+	fragTrap2.vaulthunter_dot_exe("Thr33");
+	fragTrap3.takeDamage(20);
+	fragTrap2.vaulthunter_dot_exe("Thr33");
+	fragTrap3.takeDamage(20);
+	fragTrap2.vaulthunter_dot_exe("NEWBIE-01");
+	fragTrap1.takeDamage(20);
+	fragTrap2.vaulthunter_dot_exe("NEWBIE-01");
+	fragTrap1.takeDamage(20);
+
+	std::cout << "Final Statistics of all robots" << std::endl;
+	fragTrap1.displayStats();
+	fragTrap2.displayStats();
+	fragTrap3.displayStats();
 	
 	return (0);
 }
