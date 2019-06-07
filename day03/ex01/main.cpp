@@ -38,10 +38,10 @@ int	main() {
 	fragTrap2.vaulthunter_dot_exe("NEWBIE-01");
 	fragTrap1.takeDamage(20);
 
-	std::cout << "Final Statistics of all robots" << std::endl;
-	fragTrap1.displayStats();
-	fragTrap2.displayStats();
-	fragTrap3.displayStats();
+	// std::cout << "Final Statistics of all robots" << std::endl;
+	// fragTrap1.displayStats();
+	// fragTrap2.displayStats();
+	// fragTrap3.displayStats();
 
 	scavTrap1.meleeAttack("Mielies");
 	scavTrap1.rangedAttack("Rangers");
@@ -52,6 +52,21 @@ int	main() {
 	scavTrap1.beRepaired(500);
 	scavTrap1.rename("NEWBIE-01");
 	scavTrap1.beRepaired(20);
+
+	ScavTrap scavTrap2(scavTrap1);
+	scavTrap2.rename("TQO-TWO");
+	scavTrap2.meleeAttack("NEWBIE-01");
+	scavTrap1.takeDamage(30);
+
+	ScavTrap scavTrap3("Thr33");
+	std::cout << std::endl;
 	
+	std::cout << "Final Statistics of all robots" << std::endl;
+	fragTrap1.displayStats();
+	fragTrap2.displayStats();
+	fragTrap3.displayStats();
+	scavTrap1.displayStats();
+	scavTrap2.displayStats();
+	scavTrap3.displayStats();
 	return (0);
 }

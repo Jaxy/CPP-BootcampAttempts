@@ -49,21 +49,23 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &r)
 void	ScavTrap::meleeAttack(std::string const &target)
 {
 	std::cout << "SC4G-TP \x1b[34m" << this->_name << "\x1b[0m attacks \x1b[34m" << target << 
-    "\x1b[0m at melee, causing \x1b[31m" << this->_mAtk << "\x1b[0m points of damage !" << std::endl << std::endl;
+    "\x1b[0m at melee, causing \x1b[31m" << this->_mAtk << "\x1b[0m points of damage !" 
+    << std::endl << "Too close for comfort!!!" << std::endl << std::endl;
 	return;
 }
 
 void	ScavTrap::rangedAttack(std::string const &target)
 {
 	std::cout << "SC4G-TP \x1b[34m" << this->_name << "\x1b[0m attacks \x1b[34m" << target << 
-    "\x1b[0m at range, causing \x1b[31m" << this->_rAtk << "\x1b[0m points of damage !" << std::endl << std::endl;
+    "\x1b[0m at range, causing \x1b[31m" << this->_rAtk << "\x1b[0m points of damage !" 
+    << std::endl << "Far beyond my pain threshold!!!" << std::endl << std::endl;
 	return;
 }
 
 void	ScavTrap::rename(std::string input)
 {
 	std::cout << "\x1b[34m" << this->_name << "\x1b[0m is being renamed, meet \x1b[34m" << input << 
-	"\x1b[0m once again but with a different name :P" << std::endl << std::endl;
+	"\x1b[0m once again but with a different name :P I think I lost my old self" << std::endl << std::endl;
 	this->_name = input;
 	return;
 }
@@ -71,35 +73,40 @@ void	ScavTrap::rename(std::string input)
 void	ScavTrap::randAtk1(std::string const &target)
 {
 	std::cout << "SC4G-TP \x1b[34m" << this->_name << "\x1b[0m attacks \x1b[34m" << target << 
-    "\x1b[0m with a \x1b[33mstick\x1b[0m, causing \x1b[31m" << this->_rAtk << "\x1b[0m points of damage !" << std::endl << std::endl;
+    "\x1b[0m with a \x1b[33mstick\x1b[0m, causing \x1b[31m" << this->_rAtk << "\x1b[0m points of damage !"
+    << std::endl << "Sticks and ... nevermind, sticks will do!" << std::endl << std::endl;
 	return;
 }
 
 void	ScavTrap::randAtk2(std::string const &target)
 {
 	std::cout << "SC4G-TP \x1b[34m" << this->_name << "\x1b[0m attacks \x1b[34m" << target << 
-    "\x1b[0m with a \x1b[33mshoe\x1b[0m, causing \x1b[31m" << this->_rAtk << "\x1b[0m points of damage !" << std::endl << std::endl;
+    "\x1b[0m with a \x1b[33mshoe\x1b[0m, causing \x1b[31m" << this->_rAtk << "\x1b[0m points of damage !"
+    << std::endl << "Good thing you only have one..." << std::endl << std::endl;
 	return;
 }
 
 void	ScavTrap::randAtk3(std::string const &target)
 {
 	std::cout << "SC4G-TP \x1b[34m" << this->_name << "\x1b[0m attacks \x1b[34m" << target << 
-    "\x1b[0m with a \x1b[33mspanner\x1b[0m, causing \x1b[31m" << this->_rAtk << "\x1b[0m points of damage !" << std::endl << std::endl;
+    "\x1b[0m with a \x1b[33mspanner\x1b[0m, causing \x1b[31m" << this->_rAtk << "\x1b[0m points of damage !"
+    << std::endl << "Do you think I have loose screws upstairs???" << std::endl << std::endl;
 	return;
 }
 
 void	ScavTrap::randAtk4(std::string const &target)
 {
 	std::cout << "SC4G-TP \x1b[34m" << this->_name << "\x1b[0m attacks \x1b[34m" << target << 
-    "\x1b[0m with a \x1b[33mpillow\x1b[0m, causing \x1b[31m" << this->_rAtk << "\x1b[0m points of damage !" << std::endl << std::endl;
+    "\x1b[0m with a \x1b[33mpillow\x1b[0m, causing \x1b[31m" << this->_rAtk << "\x1b[0m points of damage !"
+    << std::endl << "Thanks, I know I need rest but I'm in no rush for the RIP label!!!!" << std::endl << std::endl;
 	return;
 }
 
 void	ScavTrap::randAtk5(std::string const &target)
 {
 	std::cout << "SC4G-TP \x1b[34m" << this->_name << "\x1b[0m attacks \x1b[34m" << target << 
-    "\x1b[0m with a \x1b[33mpunch\x1b[0m, causing \x1b[31m" << this->_rAtk << "\x1b[0m points of damage !" << std::endl << std::endl;
+    "\x1b[0m with a \x1b[33mpunch\x1b[0m, causing \x1b[31m" << this->_rAtk << "\x1b[0m points of damage !"
+    << std::endl << "Not the face~~~~~" << std::endl << std::endl;
 	return;
 }
 
