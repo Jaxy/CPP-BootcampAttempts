@@ -59,7 +59,17 @@ int	main() {
 	scavTrap1.takeDamage(30);
 
 	ScavTrap scavTrap3("Thr33");
+	scavTrap3.rangedAttack("Too-TWO");
+	scavTrap2.takeDamage(20);
 	std::cout << std::endl;
+
+	std::cout << "===== CHALLENGE =====" << std::endl;
+	scavTrap1.challengeNewcomer("NewCommer");
+	scavTrap2.challengeNewcomer("NewCommer2");
+	scavTrap2.challengeNewcomer("NewCommer3");
+	// scavTrap2.challengeNewcomer("Thr33");
+	// scavTrap2.challengeNewcomer("NEWBIE-01");
+	// scavTrap2.challengeNewcomer("NEWBIE-01");
 	
 	std::cout << "Final Statistics of all robots" << std::endl;
 	fragTrap1.displayStats();

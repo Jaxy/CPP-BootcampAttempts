@@ -25,7 +25,7 @@ class ScavTrap {
     void    randAtk3(std::string const &target);
     void    randAtk4(std::string const &target);
     void    randAtk5(std::string const &target);
-    void	vaulthunter_dot_exe(std:: string const &target);
+    void	challengeNewcomer(std::string const &target);
 
 	private:
     int					_hp;

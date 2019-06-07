@@ -8,7 +8,7 @@ ScavTrap::ScavTrap(void) : _hp(100), _mhp(100), _ep(50), _mep(50), _lv(1), _name
 	return;
 }
 
-ScavTrap::ScavTrap(std::string name) : _hp(100), _mhp(100), _ep(100), _mep(100), _lv(1), _name(name), _mAtk(30), _rAtk(20), _armor(5)
+ScavTrap::ScavTrap(std::string name) : _hp(100), _mhp(100), _ep(50), _mep(50), _lv(1), _name(name), _mAtk(20), _rAtk(15), _armor(3)
 {
 	srand(time(0));
 	std::cout << "Parameter Constructor called for \x1b[34m" << this->_name << "\x1b[0m" << std::endl;
@@ -165,30 +165,16 @@ void	ScavTrap::beRepaired(unsigned int amount)
 	return;
 }
 
-void	ScavTrap::vaulthunter_dot_exe(std::string const &target)
+void	ScavTrap::challengeNewcomer(std::string const &target)
 {
 	int i = rand() % 5;
-	// int x = 0;
-
-	void (ScavTrap::*randAtks[])(std::string const &) =
-	{
-        //functions
-		&ScavTrap::randAtk1,
-		&ScavTrap::randAtk2,
-		&ScavTrap::randAtk3,
-		&ScavTrap::randAtk4,
-		&ScavTrap::randAtk5
+	std::string Challenges[] = {
+		"radiate heat by short-circuiting (too much error handling criteria to process)",
+		"convert energy source from high carbon footprint fuel (easy on the fries)",
+		"change your diet from nuts and bolts to sticks and stones",
+		"get a makeover using the spare parts lying on the battlefield",
+		"dedicate half your life to your enemy"
 	};
-
-	if (this->_ep < 25)
-	{
-		//low energy points
-		std::cout << "Insufficient energy points. \x1b[34m" << this->_name << "\x1b[0m has \x1b[31m" << this->_ep << "\x1b[0m energy points. You need \x1b[32m25\x1b[0m energy points minimum!!!" << std::endl << std::endl;
-	}
-	else {
-		//energy points - 25 as uses attack
-		this->_ep = this->_ep - 25;
-		(this->*(randAtks[i]))(target);
-	}
-	return;
+	std::cout << "\x1b[34m" << this->_name << "\x1b[0m" << " challenges newcomer \x1b[34m" << target << "\x1b[0m to "
+	<< Challenges[i] << std::endl << std::endl;
 }

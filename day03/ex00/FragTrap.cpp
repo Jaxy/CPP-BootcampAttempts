@@ -161,7 +161,6 @@ void	FragTrap::beRepaired(unsigned int amount)
 void	FragTrap::vaulthunter_dot_exe(std::string const &target)
 {
 	int i = rand() % 5;
-	// int x = 0;
 
 	void (FragTrap::*randAtks[])(std::string const &) =
 	{
