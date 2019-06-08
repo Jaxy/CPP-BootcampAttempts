@@ -1,5 +1,5 @@
 # Name of the program.
-NAME     := FR4G-TP
+NAME     := SC4V-TP
 
 # Sources and objects.
 SRCS     := main.cpp FragTrap.cpp ScavTrap.cpp
