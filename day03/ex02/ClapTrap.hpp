@@ -11,7 +11,7 @@ class	ClapTrap
 		ClapTrap(void);
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap &obj);
-		virtual ~ClapTrap(void);
+		~ClapTrap(void);
 		ClapTrap &operator=(ClapTrap const &r);
 
 		void	rangedAttack(std::string const &target);
