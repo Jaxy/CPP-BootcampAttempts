@@ -43,6 +43,16 @@ int	main()
 		cb.queueUp("H");
 		cb.queueUp("I");
 		cb.queueUp("J");
+		cb.queueUp("K");
+		cb.queueUp("L");
+		cb.queueUp("M");
+		cb.queueUp("N");
+		cb.queueUp("O");
+		cb.queueUp("P");
+		cb.queueUp("Q");
+		cb.queueUp("R");
+		cb.queueUp("S");
+		cb.queueUp("T");
 
 		std::cout << std::endl << "\x1b[35mExecuting doBureaucracy function\x1b[0m" << std::endl;
 		cb.doBureaucracy();
