@@ -20,7 +20,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const {
 	if ((this->getSigned() == true) && (executor.getGrade() <= this->getEGrade()))
-		std::cout << executor.getName() << " has been pardoned by Zafod Beeblebrox" << std::endl;
+		std::cout << executor.getName() << " has been pardoned by His Honour" << std::endl;
 	else if (this->getSigned() == false)
 		std::cout << "A Bureaucrat must signed this form first before it can be requested." << std::endl;
 	else
