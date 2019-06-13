@@ -1,5 +1,5 @@
 # Name of the program.
-NAME     := serialize
+NAME     := base
 
 # Sources and objects.
 SRCS     := main.cpp Base.cpp ABC.cpp
