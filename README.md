@@ -38,6 +38,8 @@ cpp_bootcamp
 └───day07
 │
 └───day08
+│
+└───rush00
 ```
 ## Compiling and Executing
 In general you would compile any C++ program using gcc, including the source code and headers, as well as any flags you'd like to implement. i.e.
